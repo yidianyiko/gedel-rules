@@ -1,0 +1,148 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-7-9",
+    "description": "Knowledge classification rules for project isolation"
+  },
+  "global_knowledge_patterns": {
+    "technology_agnostic": {
+      "keywords": [
+        "programming principles", "software design", "best practices", "methodology",
+        "development workflow", "code quality", "testing strategies", "version control",
+        "git", "agile", "scrum", "kanban", "ci/cd", "devops", "microservices",
+        "architecture patterns", "design patterns", "clean code", "refactoring"
+      ],
+      "confidence_threshold": 0.7
+    },
+    "tool_specific": {
+      "keywords": [
+        "cursor", "vscode", "intellij", "eclipse", "vim", "emacs", "terminal",
+        "docker", "kubernetes", "aws", "azure", "gcp", "jenkins", "github",
+        "gitlab", "bitbucket", "npm", "yarn", "pip", "conda", "maven", "gradle"
+      ],
+      "confidence_threshold": 0.8
+    },
+    "cross_project": {
+      "keywords": [
+        "reusable", "template", "boilerplate", "framework", "library", "utility",
+        "common", "shared", "standard", "convention", "guideline", "checklist"
+      ],
+      "confidence_threshold": 0.6
+    },
+    "system_level": {
+      "keywords": [
+        "environment setup", "deployment", "infrastructure", "server", "database",
+        "network", "security", "monitoring", "logging", "backup", "disaster recovery",
+        "performance tuning", "scaling", "load balancing"
+      ],
+      "confidence_threshold": 0.7
+    },
+    "meta_knowledge": {
+      "keywords": [
+        "knowledge management", "learning", "documentation", "wiki", "knowledge base",
+        "information architecture", "search", "indexing", "tagging", "categorization"
+      ],
+      "confidence_threshold": 0.9
+    }
+  },
+  "project_specific_patterns": {
+    "domain_logic": {
+      "keywords": [
+        "business logic", "domain model", "entity", "service", "repository",
+        "controller", "api endpoint", "database schema", "data model"
+      ],
+      "confidence_threshold": 0.6
+    },
+    "project_configuration": {
+      "keywords": [
+        "config", "settings", "environment variables", "env", "properties",
+        "configuration file", "setup", "installation", "dependencies"
+      ],
+      "confidence_threshold": 0.7
+    },
+    "project_issues": {
+      "keywords": [
+        "bug", "issue", "error", "exception", "crash", "problem", "troubleshooting",
+        "debug", "fix", "workaround", "patch", "hotfix"
+      ],
+      "confidence_threshold": 0.8
+    },
+    "project_decisions": {
+      "keywords": [
+        "decision", "choice", "trade-off", "architecture decision", "design decision",
+        "technology choice", "framework selection", "library selection"
+      ],
+      "confidence_threshold": 0.7
+    }
+  },
+  "classification_rules": {
+    "context_detection": {
+      "project_name_mention": {
+        "weight": 0.8,
+        "description": "Content mentions specific project name"
+      },
+      "project_file_reference": {
+        "weight": 0.9,
+        "description": "Content references project-specific files"
+      },
+      "project_domain_terms": {
+        "weight": 0.6,
+        "description": "Content uses project domain-specific terminology"
+      }
+    },
+    "scope_analysis": {
+      "multiple_projects": {
+        "weight": 0.7,
+        "description": "Content applies to multiple projects"
+      },
+      "general_principles": {
+        "weight": 0.8,
+        "description": "Content describes general principles"
+      },
+      "tool_agnostic": {
+        "weight": 0.6,
+        "description": "Content is tool-agnostic"
+      }
+    },
+    "dependency_check": {
+      "project_specific_deps": {
+        "weight": 0.9,
+        "description": "Content involves project-specific dependencies"
+      },
+      "version_specific": {
+        "weight": 0.8,
+        "description": "Content mentions specific versions"
+      },
+      "compatibility_notes": {
+        "weight": 0.7,
+        "description": "Content discusses compatibility issues"
+      }
+    },
+    "reusability": {
+      "cross_project_applicable": {
+        "weight": 0.7,
+        "description": "Content can be applied to other projects"
+      },
+      "template_pattern": {
+        "weight": 0.8,
+        "description": "Content describes reusable patterns"
+      },
+      "best_practice": {
+        "weight": 0.6,
+        "description": "Content describes best practices"
+      }
+    }
+  },
+  "confidence_scoring": {
+    "high_confidence": 0.8,
+    "medium_confidence": 0.6,
+    "low_confidence": 0.4,
+    "minimum_threshold": 0.3
+  },
+  "auto_classification": {
+    "enabled": true,
+    "manual_override": true,
+    "review_threshold": 0.5,
+    "learning_enabled": true
+  }
+} 

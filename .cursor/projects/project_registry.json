@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-7-9",
+    "last_updated": "2025-7-9",
+    "total_projects": 0
+  },
+  "projects": {},
+  "project_types": {
+    "nodejs": {
+      "indicators": ["package.json", "node_modules", "npm-shrinkwrap.json", "yarn.lock"],
+      "priority": 1
+    },
+    "python": {
+      "indicators": ["requirements.txt", "setup.py", "pyproject.toml", "Pipfile", "poetry.lock"],
+      "priority": 1
+    },
+    "java": {
+      "indicators": ["pom.xml", "build.gradle", "gradle.properties", "src/main/java"],
+      "priority": 1
+    },
+    "react": {
+      "indicators": ["package.json", "src/App.js", "src/App.tsx", "public/index.html"],
+      "priority": 2
+    },
+    "vue": {
+      "indicators": ["package.json", "vue.config.js", "src/main.js", "src/App.vue"],
+      "priority": 2
+    },
+    "fastapi": {
+      "indicators": ["main.py", "requirements.txt", "app/", "api/"],
+      "priority": 2
+    },
+    "django": {
+      "indicators": ["manage.py", "settings.py", "urls.py", "wsgi.py"],
+      "priority": 2
+    }
+  },
+  "active_project": null,
+  "project_dependencies": {},
+  "statistics": {
+    "total_knowledge_entries": 0,
+    "global_knowledge_entries": 0,
+    "project_knowledge_entries": 0
+  }
+} 

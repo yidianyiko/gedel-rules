@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-7-9",
+    "description": "Project isolation knowledge management system configuration"
+  },
+  "system_settings": {
+    "auto_discovery": {
+      "enabled": true,
+      "scan_interval": 3600,
+      "scan_depth": 3,
+      "exclude_patterns": [
+        ".git",
+        ".svn",
+        "node_modules",
+        "__pycache__",
+        ".pytest_cache",
+        "venv",
+        "env",
+        ".env"
+      ]
+    },
+    "knowledge_sync": {
+      "enabled": true,
+      "sync_interval": 300,
+      "conflict_resolution": "manual",
+      "backup_enabled": true,
+      "backup_interval": 86400
+    },
+    "search": {
+      "enabled": true,
+      "index_update_interval": 600,
+      "semantic_search": true,
+      "fuzzy_matching": true,
+      "max_results": 50
+    },
+    "validation": {
+      "enabled": true,
+      "auto_validation": false,
+      "validation_interval": 3600,
+      "expiration_check": true,
+      "expiration_threshold": 365
+    }
+  },
+  "file_paths": {
+    "global_lessons": ".cursor/memory/lessons.md",
+    "global_todo": ".cursor/think/todo.md",
+    "global_tools": ".cursor/tool/tools.md",
+    "global_knowledge_index": ".cursor/memory/knowledge_index.json",
+    "global_validation_log": ".cursor/memory/validation_log.md",
+    "project_registry": ".cursor/projects/project_registry.json",
+    "classification_rules": ".cursor/projects/classification_rules.json",
+    "templates_dir": ".cursor/projects/templates"
+  },
+  "project_structure": {
+    "lessons_file": "lessons.md",
+    "todo_file": "todo.md",
+    "config_file": "config.md",
+    "knowledge_index_file": "knowledge_index.json"
+  },
+  "knowledge_quality": {
+    "verification_levels": ["VERIFIED", "TESTING", "HYPOTHESIS"],
+    "impact_levels": ["CRITICAL", "IMPORTANT", "NICE_TO_HAVE"],
+    "expiration_format": "YYYY-MM-DD",
+    "scope_tags": ["GLOBAL", "PROJECT"]
+  },
+  "task_management": {
+    "priority_levels": ["HIGH", "MEDIUM", "LOW"],
+    "status_levels": ["TODO", "IN_PROGRESS", "REVIEW", "DONE"],
+    "risk_levels": ["HIGH", "MEDIUM", "LOW"],
+    "dependency_format": "DEPENDS_ON:task_id",
+    "knowledge_format": "REQUIRES:knowledge_id"
+  },
+  "logging": {
+    "enabled": true,
+    "level": "INFO",
+    "file": ".cursor/projects/system.log",
+    "max_size": "10MB",
+    "backup_count": 5
+  },
+  "performance": {
+    "max_file_size": "10MB",
+    "max_search_results": 100,
+    "cache_enabled": true,
+    "cache_size": "100MB",
+    "cache_ttl": 3600
+  },
+  "security": {
+    "file_permissions": "644",
+    "directory_permissions": "755",
+    "backup_encryption": false,
+    "access_control": false
+  },
+  "integration": {
+    "git_integration": true,
+    "editor_integration": true,
+    "terminal_integration": true,
+    "api_enabled": false
+  }
+} 

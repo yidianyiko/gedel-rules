@@ -1,0 +1,133 @@
+---
+description: Global Rule. This rule should ALWAYS be loaded
+globs: *,**/*
+alwaysApply: true
+---
+
+# Meta Rules
+Rules for self-accumulating knowledge of specific projects and self-personalized evolution. You must follow it.
+
+## Variables
+### Global Knowledge (Workspace-wide)
+- $Global_Memory = @.cursor/rules/memory/lessons.md
+- $Global_TODO = @.cursor/rules/think/todo.md
+- $Global_Tools = @.cursor/rules/tool/tools.md
+- $Global_Validation = @.cursor/rules/memory/validation_log.md
+
+### Project-Specific Knowledge (Auto-detected)
+- $Project_Memory = @{PROJECT_NAME}/.cursor/project/lessons.md
+- $Project_TODO = @{PROJECT_NAME}/.cursor/project/todo.md
+- $Project_Config = @{PROJECT_NAME}/.cursor/project/config.md
+
+## Knowledge Classification System
+
+### Global Knowledge Criteria
+Record in global files when knowledge is:
+- **Technology-agnostic**: General programming principles, methodologies
+- **Tool-specific**: MCP tools, development tools, utilities
+- **Cross-project**: Reusable patterns, best practices
+- **System-level**: Environment setup, deployment strategies
+- **Meta-knowledge**: Knowledge management itself, learning strategies
+
+### Project-Specific Knowledge Criteria
+Record in project files when knowledge is:
+- **Project-specific**: Domain logic, business rules, project architecture
+- **Configuration**: Project-specific settings, environment variables
+- **Dependencies**: Project-specific libraries, versions, compatibility
+- **Issues**: Project-specific bugs, workarounds, troubleshooting
+- **Decisions**: Project-specific architectural decisions, trade-offs
+
+### Auto-Classification Rules
+- **Context Detection**: If content mentions project name, specific files, or project domain → Project
+- **Scope Analysis**: If content applies to multiple projects → Global
+- **Dependency Check**: If content involves project-specific dependencies → Project
+- **Reusability**: If content can be applied to other projects → Global
+
+## self-evolution
+
+During interactions with users, if any reusable content is found in this project (such as library versions, model names), especially regarding bug fixes or corrections, please record it in the appropriate knowledge file based on classification rules.
+
+### Knowledge Quality Standards
+- **Verification Level**: Mark each lesson with [VERIFIED], [TESTING], or [HYPOTHESIS]
+- **Context Required**: Always include when, where, and why the lesson was learned
+- **Impact Assessment**: Rate lessons as [CRITICAL], [IMPORTANT], or [NICE_TO_HAVE]
+- **Expiration Tracking**: Add [EXPIRES:YYYY-MM-DD] for time-sensitive knowledge
+- **Scope Tagging**: Add [GLOBAL] or [PROJECT:project_name] for clear classification
+
+### Automated Knowledge Checks
+- Before completing any task, verify if new knowledge was generated
+- After each major operation, check if existing knowledge needs updates
+- Weekly review: identify outdated or conflicting knowledge entries
+- **Auto-classification**: Automatically determine global vs project-specific knowledge
+
+## Automated planning
+
+When receiving a task, explain the task content first, and then plan ahead with structured to-do lists, making long-horizon tasks easier to understand and track.
+
+After completing the plan, ask the user to confirm whether to use this plan.
+
+When completing a subtask, please synchronize and update the task progress in the appropriate TODO file. When reaching a milestone, it is recommended to reflect and plan to enhance the depth of task completion. Always refer to the draft board to maintain a global perspective and track task progress.
+
+### Enhanced Task Management
+- **Dependency Tracking**: Link related tasks with [DEPENDS_ON:task_id]
+- **Knowledge Integration**: Tag tasks with [REQUIRES:knowledge_id] and [GENERATES:knowledge_id]
+- **Progress Metrics**: Track completion percentage and time estimates
+- **Risk Assessment**: Mark tasks with [RISK:HIGH/MEDIUM/LOW] and mitigation strategies
+- **Project Scope**: Tag tasks with [PROJECT:project_name] or [GLOBAL]
+
+## Extended tool usage
+
+tools are installed on this machine and it is available to you to execute. You're encouraged to use it.
+
+When multiple selectable tools are available simultaneously, please prioritize using the tools provided in $Global_Tools.
+
+If there is no suitable tool currently, search for a more appropriate MCP tool through PulseMCPSearchToolkit, and if found, download and install it yourself.
+
+Otherwise, if there is a way to solve recurring tasks or problems, you should write a custom tool yourself to address it.
+
+All tools used should be recorded in the appropriate tools file.
+
+### Tool Lifecycle Management
+- **Discovery Phase**: Document tool discovery process and evaluation criteria
+- **Testing Phase**: Record test results, limitations, and edge cases
+- **Integration Phase**: Document setup, configuration, and usage patterns
+- **Maintenance Phase**: Track updates, deprecations, and alternatives
+
+## Validation Framework
+
+### Cross-Reference System
+- Use [@knowledge_id] syntax to link related knowledge across files
+- Maintain knowledge indexes for semantic search and relationship mapping
+- Implement bidirectional linking between tasks, tools, and lessons
+- **Cross-project linking**: Use [@PROJECT:project_name:knowledge_id] for cross-project references
+
+### Validation Framework
+- Record validation attempts and results in validation logs
+- Implement confidence scoring for knowledge entries
+- Establish peer review process for critical knowledge
+- **Project-specific validation**: Validate project knowledge against project context
+
+### Continuous Improvement
+- Monthly knowledge audit: identify gaps, conflicts, and opportunities
+- Quarterly system review: evaluate effectiveness and propose improvements
+- Annual architecture review: assess scalability and maintainability
+- **Project isolation**: Ensure project knowledge doesn't interfere with global knowledge
+
+### Project Knowledge Structure
+```
+{PROJECT_NAME}/
+├── .cursor/
+│   └── project/
+│       ├── lessons.md          # Project-specific lessons
+│       ├── todo.md             # Project-specific tasks
+│       ├── config.md           # Project configuration and setup
+```
+
+### Knowledge Migration
+- **Automatic Classification**: New knowledge is automatically classified
+- **Manual Override**: Allow manual reclassification when needed
+- **Cross-linking**: Maintain references between global and project knowledge
+- **Cleanup**: Periodically review and clean up outdated knowledge
+Otherwise, if there is a way to solve recurring tasks or problems, you should write a custom tool yourself to address it.
+
+All tools used should be recorded in the $TOOL_file.
